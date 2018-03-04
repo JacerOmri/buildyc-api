@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
 
-app.use('/', routes);
+app.use('/api', routes);
 
 app.listen(config.server.port, () => {
   console.log(`Magic happens on port ${config.server.port}`);
