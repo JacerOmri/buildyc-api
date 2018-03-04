@@ -9,6 +9,13 @@ class PostFacade extends Facade {
             return post.save();
         })
     }
+
+    findById(...args) {
+        return this.model
+          .findById(...args)
+          .populate('likes')
+          .exec();
+    }
 }
 
 module.exports = new PostFacade('Post', postSchema);
